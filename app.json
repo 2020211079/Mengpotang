@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/start/start",
+    "pages/user/user",
+    "pages/share/share"
+  ],
+  "lazyCodeLoading": "requiredComponents"
+}
