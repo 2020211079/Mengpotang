@@ -1,0 +1,34 @@
+.start-table {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 26vh;
+}
+
+.start-mengpo {
+  position: fixed;
+  height: 66vh;
+  width: 100%;
+  top: 13vh;
+  margin-left: 40rpx;
+}
+
+.result {
+  position: fixed;
+  width: 647rpx;
+  height: 635rpx;
+  top: 45vh;
+}
+
+.choice-container {
+  display: flex;
+  color: #fff;
+  position: fixed;
+  top: 90%;
+}
+
+.choice-container button {
+  width: 100px;
+  height: 40px;
+}

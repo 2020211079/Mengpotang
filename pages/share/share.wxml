@@ -1,0 +1,14 @@
+<image class="bg-img" src="http://img.ieugen.com/background/bg2.png" />
+<image class="start-table" src="http://img.ieugen.com/background/table.png" />
+<image class="start-mengpo" src="http://img.ieugen.com/frame/mp0.png" mode="widthFix" />
+<view class="bg">
+  <image class="result" src="http://img.ieugen.com/letter/letter2.png" />
+  <view class="choice-container">
+  <button>一键成图</button>
+  <button open-type="share">分享给朋友</button>
+  <button bindtap="shareTimeline">发送到朋友圈</button>
+  </view>
+</view>
+<view class="selectors">
+
+</view>
