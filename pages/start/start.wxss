@@ -1,0 +1,289 @@
+.start-button {
+  position: fixed;
+  height: 100rpx;
+  top: 85vh;
+  transition: opacity 0;
+  transition-delay: 0.5s;
+}
+
+.start-table {
+  position: fixed;
+  bottom: 0;
+  left: -10rpx;
+  width: 760rpx;
+  height: 26vh;
+}
+
+.say-container {
+  position: fixed;
+  top: 4vh;
+  height: 20vh;
+  width: 100%;
+  transform-origin: 50% 100%;
+  animation: move 5s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.say-text {
+  position: fixed;
+  top: 8vh;
+  height: 16vh;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(112, 0, 0);
+  line-height: 5vh;
+  opacity: 0;
+  transform-origin: 50% 100%;
+  animation: move 5s infinite;
+}
+
+.start-mengpo {
+  position: fixed;
+  height: 1000rpx;
+  width: 100%;
+  bottom: 21vh;
+  margin-left: 60rpx;
+}
+
+.text-container {
+  position: fixed;
+  left: 50rpx;
+  transition: bottom 1s;
+}
+
+.text {
+  width: 647rpx;
+}
+
+.result {
+  width: 647rpx;
+  height: 635rpx;
+}
+
+.text-input {
+  position: absolute;
+  width: 570rpx;
+  height: 480rpx;
+  left: 40rpx;
+  top: 200rpx;
+}
+
+.remember {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  left: 80rpx;
+  bottom: 80rpx;
+}
+
+.forget {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  right: 80rpx;
+  bottom: 80rpx;
+}
+
+.confirm {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  left: 20rpx;
+  bottom: -100rpx;
+}
+
+.cancel {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  right: 20rpx;
+  bottom: -100rpx;
+}
+
+.button-container {
+  position: absolute;
+  left: 100rpx;
+  top: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.button-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(112, 0, 0);
+}
+
+.button-group {
+  margin-left: 8rpx;
+  width: 44px;
+  height: 24px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.button-group-border {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  position: absolute;
+  top: -1px;
+  width: 34px;
+  height: 25px;
+  transition: left 0.5s;
+}
+
+.button-input {
+  width: 100px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+.confirm-title {
+  position: absolute;
+  left: 60rpx;
+  top: 200rpx;
+}
+
+.confirm-text {
+  position: absolute;
+  left: 60rpx;
+  top: 280rpx;
+  width: 380rpx;
+  height: 300rpx;
+}
+
+.nhq {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  color: rgb(112, 0, 0);
+}
+
+.share {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  left: 225rpx;
+  bottom: -100rpx;
+}
+
+.share-button {
+  position: absolute;
+  width: 100px;
+  height: 34px;
+  left: 225rpx;
+  bottom: -100rpx;
+  opacity: 0;
+}
+
+/* 按钮组 */
+.button-naihe {
+  position: fixed;
+  width: 80px;
+  height: 60px;
+  left: -25px;
+  top: 0;
+}
+
+.button-share {
+  position: fixed;
+  width: 80px;
+  height: 60px;
+  left: -25px;
+  top: 60px;
+}
+
+.button-music {
+  position: fixed;
+  width: 80px;
+  height: 60px;
+  left: -25px;
+  top: 120px;
+}
+
+.mute-music {
+  position: fixed;
+  width: 80px;
+  height: 60px;
+  left: -25px;
+  top: 120px;
+  background-color: brown;
+}
+
+/* 遮罩层 */
+.mask {
+  animation: move-left 0.5s 1.5s;
+  animation-fill-mode: forwards;
+  /* transition: left 0.5s; */
+  background-color: #fff;
+  z-index: 999;
+}
+
+.mask-text {
+  position: fixed;
+  height: 40vh;
+  top: 7vh;
+}
+
+.mask-progress {
+  position: fixed;
+  width: 360rpx;
+  height: 50rpx;
+  border: 2px solid wheat;
+  top: 70vh;
+  padding: 1px;
+}
+
+.mask-progress-container {
+  animation: loading 1.5s;
+
+  height: 100%;
+  background-color: wheat;
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes move-left {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}

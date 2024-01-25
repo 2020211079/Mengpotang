@@ -1,0 +1,54 @@
+<!-- 加载图片的遮罩层 -->
+<view class="bg mask">
+    <image class="bg-img" src="http://img.ieugen.com/background/bg1.jpg"/>
+    <image class="mask-text" src="http://img.ieugen.com/letter/text1.png" mode="heightFix"/>
+    <view class="mask-progress">
+      <view class="mask-progress-container"></view>
+    </view>
+</view>
+
+<!-- 静态部件 -->
+<image class="bg-img" src="http://img.ieugen.com/background/bg2.png" />
+<image class="start-table" src="http://img.ieugen.com/background/table.png" />
+<view class="bg">
+  <image class="say-container" hidden="{{showText || showResult}}" src="http://img.ieugen.com/letter/text2.png" mode="heightFix"/>
+  <view class="say-text" hidden="{{showText || showResult}}">{{say}}</view>
+  <image class="start-mengpo" src="http://img.ieugen.com/frame/mp{{index}}.png" mode="aspectFill" wx:for="{{31}}" style="opacity:{{animation % 61 === index || animation % 61 + index === 60 ? '1' : '0'}};"/>
+  <image class="start-button" src="http://img.ieugen.com/button/say.png" bindtap="showText" data-show="{{true}}" mode="heightFix" style="display:{{showText || showResult ? 'none' : 'block'}};" />
+</view>
+<!-- <video src="http://img.ieugen.com/frame/paper/paper.webm" controls="{{false}}" autoplay loop /> -->
+
+<!-- 填写 -->
+<view class="text-container" style="bottom: {{showText ? '2' : '-90'}}vh;">
+  <image class="text" src="http://img.ieugen.com/letter/letter1.png" mode="widthFix" />
+  <!-- <image class="text-animation " wx:for="{{45}}" src="http://img.ieugen.com/frame/paper/{{index}}.png" mode="widthFix"/> -->
+  <textarea class="text-input" placeholder="{{self ? '我' : (subject === '' ? 'XXX' : subject)}}想记住/忘记..." bindblur="changeText" />
+  <image class="remember" src="http://img.ieugen.com/button/remember.png" bindtap="remember" data-condition="{{true}}" />
+  <image class="forget" src="http://img.ieugen.com/button/forget.png" bindtap="remember" data-condition="{{false}}" />
+  <view class="button-container">
+    <view class="button-text">我</view>
+    <view class="button-group" bindtap="changeSubject">
+      <image class="button-group-border" src="../../images/border.png" mode="aspectFill" />
+      <image class="button" src="../../images/button.png" mode="aspectFill" style="left: {{self ? '6px' : '20px'}};" />
+    </view>
+    <input class="button-input" placeholder="其他人的昵称" maxlength="{{10}}" bindblur="inputSubject" />
+  </view>
+  <view class="close" bindtap="showText" data-show="{{false}}">×</view>
+</view>
+
+<!-- 审批 -->
+<view class="text-container" style="bottom: {{showResult ? '200' : '-850'}}rpx;">
+  <image class="result" src="http://img.ieugen.com/孟婆说2.png" />
+  <image class="confirm" src="http://img.ieugen.com/button/confirm.png" bindtap="gotoUser" />
+  <image class="share" src="http://img.ieugen.com/button/empty.png" />
+  <button class="share-button" open-type="share"></button>
+  <image class="cancel" src="http://img.ieugen.com/button/forget.png" bindtap="gotoMain" />
+  <view class="confirm-title">{{self ? '我' : subject}} {{condition ? '记住' : '忘记'}} 了:</view>
+  <text class="confirm-text" space="ensp"> {{memory}}</text>
+</view>
+
+<!-- 菜单栏 -->
+<image class="button-naihe" src="http://img.ieugen.com/button/naihe.png" bindtap="gotoUser" mode="aspectFit"/>
+<image class="button-share" src="http://img.ieugen.com/button/share.png" bindtap="gotoShare" mode="aspectFit"/>
+<image class="button-music" src="http://img.ieugen.com/button/music.png" bindtap="playSound" mode="aspectFit"/>
+<view class="mute-music" hidden="{{!play}}"></view>
