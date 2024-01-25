@@ -1,0 +1,33 @@
+<image class="bg-img" src="http://img.ieugen.com/background/bg3.png"/>
+<image class="bg-img bg-river" src="http://img.ieugen.com/background/bg6.png"/>
+<image class="bg-img bg-land" src="http://img.ieugen.com/background/bg5.png"/>
+<view class="bg-img bg-river-hover" bindtap="setLetter" data-info="{{false}}"></view>
+<view class="bg-img bg-land-hover" bindtap="setLetter" data-info="{{true}}"></view>
+<view class="bg-river-tag">忘记的事</view>
+<view class="bg-land-tag">记住的事</view>
+<view class="letter-group" style="top:{{show !== null ? '15' : '100'}}vh;">
+  <swiper class="letter-container" circular>
+  <swiper-item wx:for="{{info}}" wx:if="{{item.condition == show}}">
+    <image class="letter" src="http://img.ieugen.com/letter/letter3.png" mode="widthFix"/>
+    <view class="letter-title">{{item.subject}}于{{item.time}}{{item.condition ? '记住' : '忘记'}}了：</view>
+    <view class="letter-text">{{item.condition === false ? textcode.encode(item.memory) : item.memory}}</view>
+  </swiper-item>
+</swiper>
+<view class="button-group">
+  <image src="http://img.ieugen.com/button/confirm.png" mode="heightFix" bindtap="setLetter" data-info="{{null}}"/>
+  <image src="http://img.ieugen.com/button/empty.png" mode="heightFix" bindtap="delete"/>
+</view>
+</view>
+<image class="back" src="http://img.ieugen.com/button/empty.png" bindtap="gotoMain" style="opacity: {{show !== -1 ? '0' : '1'}}; pointer-events: {{show !== -1 ? 'none' : 'all'}};"/>
+<view class="audio" bindtap="playSound">点击开始暂停</view>
+
+<wxs module="textcode">
+  var encode = function(text) {
+    var coded = "";
+    for(var i=0; i<text.length; i++){
+      coded += "▇";
+    }
+    return coded;
+  }
+  module.exports.encode = encode;
+</wxs>
